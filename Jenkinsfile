@@ -17,7 +17,13 @@ node {
     finally {
         def myBuildInfo = [:]
         def myCustomDataMap = [:]
+        def build_status_numeric = 0
+        if (currentBuild.result == 'FAILURE') {
+            build_status_numeric = 1
+        }
+
         myBuildInfo["build_status_message"] = currentBuild.result
+        myBuildInfo["build_status_numeric"] = build_status_numeric
         myCustomDataMap["jenkins_data"] = myBuildInfo
 
         step([$class: 'InfluxDbPublisher',
