@@ -1,0 +1,14 @@
+{
+  "name": "example-repo",
+  "version": "1.0.0",
+  "description": "Example Repository with Vulnerable Dependency",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "lodash": "4.17.19"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}
